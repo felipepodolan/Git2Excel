@@ -32,6 +32,7 @@
         {
             this.Diretorio = new System.Windows.Forms.Button();
             this.gitinit = new System.Windows.Forms.Button();
+            this.Add = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Diretorio
@@ -54,11 +55,22 @@
             this.gitinit.UseVisualStyleBackColor = true;
             this.gitinit.Click += new System.EventHandler(this.gitinit_Click);
             // 
+            // Add
+            // 
+            this.Add.Location = new System.Drawing.Point(713, 42);
+            this.Add.Name = "Add";
+            this.Add.Size = new System.Drawing.Size(75, 23);
+            this.Add.TabIndex = 2;
+            this.Add.Text = "Add";
+            this.Add.UseVisualStyleBackColor = true;
+            this.Add.Click += new System.EventHandler(this.Add_Click);
+            // 
             // Git2Excel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.Add);
             this.Controls.Add(this.gitinit);
             this.Controls.Add(this.Diretorio);
             this.Name = "Git2Excel";
@@ -71,5 +83,6 @@
 
         private System.Windows.Forms.Button Diretorio;
         private System.Windows.Forms.Button gitinit;
+        private System.Windows.Forms.Button Add;
     }
 }

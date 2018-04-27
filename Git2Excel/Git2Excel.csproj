@@ -52,6 +52,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Add.cs" />
     <Compile Include="Git2Excel.cs">
       <SubType>Form</SubType>
     </Compile>

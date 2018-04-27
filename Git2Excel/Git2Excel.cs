@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using LibGit2Sharp;
 using System.Windows.Forms;
 
 namespace Git2Excel
@@ -34,8 +28,34 @@ namespace Git2Excel
         {
             if(path != "")
             {
-                MessageBox.Show("Iniciando repositório Git2Excel em: " + path);
-                Init init = new Init(path);
+                if(!Repository.IsValid(path))
+                {
+                    MessageBox.Show("Iniciando repositório Git2Excel em: " + path);
+                    Init init = new Init(path);
+                }
+                else
+                {
+                    MessageBox.Show("Repositório já existente");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Diretório vazio");
+            }
+        }
+
+        private void Add_Click(object sender, EventArgs e)
+        {
+            if (path != "")
+            {
+                if (Repository.IsValid(path))
+                {
+                    Add add = new Add(path);
+                }
+                else
+                {
+                    MessageBox.Show("Repositório não existente");
+                }
             }
             else
             {
