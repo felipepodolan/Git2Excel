@@ -32,9 +32,11 @@ namespace Git2Excel
                 
                 using (var repo = new Repository(path))
                 {
-                    //repo.Ignore.AddTemporaryRules(excelExtensions);
-                    //Commands.Stage(repo, "*");
+                    repo.Ignore.AddTemporaryRules(new[] { "*.zip" });
+                    Commands.Stage(repo, "*");
                 }
+
+                System.IO.File.Move(newFilename, excelFile);
 
             }
         }

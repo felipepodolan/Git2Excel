@@ -12,6 +12,8 @@ namespace Git2Excel
         public Git2Excel()
         {
             InitializeComponent();
+            path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            textBox1.Text = path;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -20,7 +22,7 @@ namespace Git2Excel
             if(Navegar.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 path = Navegar.SelectedPath;
-                MessageBox.Show(path);
+                textBox1.Text = path;
             }
         }
 
@@ -61,6 +63,16 @@ namespace Git2Excel
             {
                 MessageBox.Show("Diretório vazio");
             }
+        }
+
+        private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+           path = textBox1.Text;
         }
     }
 }
